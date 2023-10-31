@@ -1,4 +1,6 @@
 import React from 'react'
+import bannerImg from '../../assets/banner1.png'
+import bannerImg2 from '../../assets/banner2.png'
 
 const Banner = () => {
   return (
@@ -6,10 +8,10 @@ const Banner = () => {
         <h1 className='text-center text-5xl text-white py-12 font-bold font-sans uppercase'>PDF Tools</h1>
         
        <div>
-        <img src="src/assets/banner1.png" alt="" className='absolute top-16 left-4 '/>
+        <img src={bannerImg} alt="" className='absolute top-16 left-4 '/>
        </div>
        <div>
-        <img src="src/assets/banner2.png" alt="" className='absolute top-16 right-4 '/>
+        <img src={bannerImg2} alt="" className='absolute top-16 right-4 '/>
        </div>
         
         <form className='w-[700px] mx-auto text-center'>

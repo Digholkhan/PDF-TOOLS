@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../Container'
 import Flex from '../Flex'
 import "/src/App.css"
+import logo from '../../assets/logo.png'
 import {TbGridDots} from 'react-icons/tb'
 import {BsFillFileEarmarkPdfFill} from 'react-icons/bs'
 import { Link, NavLink } from 'react-router-dom'
@@ -14,7 +15,7 @@ const NavBar = () => {
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link>
           <a href="#" class="flex items-center">
-              <img src="src/assets/download.png" class="h-10 mr-3" alt="" />
+              <img src={logo} class="h-10 mr-3" alt="" />
               <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PDF TOOLS</span>
           </a>
           </Link>
