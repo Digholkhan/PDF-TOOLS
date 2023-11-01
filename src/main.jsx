@@ -12,6 +12,7 @@ import {
 import AutoLayout from './Components/AutoLayout/AutoLayout.jsx';
 import Home from './Pages/Home/Home.jsx';
 import Drop from './Components/DropFiles/Drop.jsx';
+import Tools from './Components/Tools/Tools.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
     >
     <Route path='/' element={<Home></Home>} />  
     <Route path='/drop' element={<Drop></Drop>} />  
+    <Route path='/tools' element={<Tools></Tools>} />  
     
     </Route>
   )

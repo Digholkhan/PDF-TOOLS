@@ -2,13 +2,20 @@ import React from 'react'
 import Container from '../Container'
 import {FiUpload} from 'react-icons/fi'
 import Flex from '../Flex'
+import { Link } from 'react-router-dom'
+
 
 const Drop = () => {
   return (
     <div className='py-20 bg-blue-500'>
         
         <Container>
-        <h1 className='text-5xl  text-center pb-20 font-bold text-white uppercase'>Convert to PDF</h1>
+        <h1 className='text-5xl  text-center pb-10 font-bold text-white uppercase'>Upload your files</h1>
+        <div className='text-center mb-14'>
+            <Link to='/tools'>
+                <button className='py-4 px-20 bg-gray-900 focus:ring-4  text-gray-300 text-lg font-medium rounded-lg hover:bg-gray-800'>Go back to tools</button>
+            </Link>
+        </div>
         <div class="flex items-center justify-center w-full border-dashed border-2 border-gray-200 rounded-md  outline outline-gray-300 outline-offset-4">
             <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-auto border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-300 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 duration-200 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                 <div class="flex flex-col items-center justify-center py-10">
