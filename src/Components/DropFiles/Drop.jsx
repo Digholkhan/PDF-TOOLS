@@ -13,7 +13,7 @@ const Drop = () => {
         <h1 className='text-5xl  text-center pb-10 font-bold text-white uppercase'>Upload your files</h1>
         <div className='text-center mb-14'>
             <Link to='/tools'>
-                <button className='py-4 px-20 bg-gray-900 focus:ring-4  text-gray-300 text-lg font-medium rounded-lg hover:bg-gray-800'>Go back to tools</button>
+                <button className='py-4 px-16 bg-gray-900 focus:ring-4  text-gray-300 text-lg font-medium rounded-lg hover:bg-gray-800'>Go back to tools</button>
             </Link>
         </div>
         <div class="flex items-center justify-center w-full border-dashed border-2 border-gray-200 rounded-md  outline outline-gray-300 outline-offset-4">

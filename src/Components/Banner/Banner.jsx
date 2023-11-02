@@ -5,8 +5,8 @@ import bannerImg2 from '../../assets/banner2.png'
 const Banner = () => {
   return (
     <div className='bg-blue-500  py-40 relative'>
-        <h1 className='text-center text-5xl text-white py-12 font-bold font-sans uppercase'>PDF Tools</h1>
-        
+        <h1 className='text-center text-7xl text-white pt-10 pb-4 font-bold font-sans uppercase'>PDF Tools</h1>
+        <p className='text-center text-xl text-gray-200 pb-14'>We make PDF easy.</p>
        <div>
         <img src={bannerImg} alt="" className='absolute top-16 left-4 '/>
        </div>
@@ -14,7 +14,7 @@ const Banner = () => {
         <img src={bannerImg2} alt="" className='absolute top-16 right-4 '/>
        </div>
         
-        <form className='w-[700px] mx-auto text-center'>    
+        <form className='w-[700px] mx-auto text-center pb-10'>    
             <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
