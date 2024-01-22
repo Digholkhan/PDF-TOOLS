@@ -1,6 +1,5 @@
 import React from 'react'
 import Banner from '../../Components/Banner/Banner'
-import Tools from '../../Components/Tools/Tools'
 import OurTools from '../../Components/OurTools/OurTools'
 
 

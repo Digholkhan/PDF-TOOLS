@@ -3,9 +3,48 @@ import Container from '../Container'
 import {FiUpload} from 'react-icons/fi'
 import Flex from '../Flex'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 
 const Drop = () => {
+
+    const [imageFile, setImageFile] = useState(null);
+
+    const handleImage = (e) => {
+        const file = e.target.files[0];
+        setImageFile(file);
+      };
+
+// onSubmit function
+const onSubmit = async (e) => {
+    e.preventDefault()
+
+    const formData = new FormData();
+    formData.append("file", imageFile);
+
+      // Make a POST request to the API endpoint
+      try {
+
+          const response = await fetch('https://tools4everyone.com/api/single_file_upload?tool=p2i', {
+               mode: 'no-cors',
+               method: 'POST',
+               headers: {
+                 'accept': 'application/json',
+                 'Content-Type': 'multipart/form-data'
+               },
+               body: formData
+             });
+             const result = await response.json()
+             console.log(result)
+      }
+      catch(err){
+        console.log(err.message)
+      }
+
+    // request to the server
+    
+  };
+
   return (
     <div className='py-20 bg-blue-500'>
         
@@ -13,27 +52,31 @@ const Drop = () => {
         <h1 className='text-5xl  text-center pb-10 font-bold text-white uppercase'>Upload your files</h1>
         <div className='text-center mb-14'>
             <Link to='/tools'>
-                <button className='py-4 px-16 bg-gray-900 focus:ring-4  text-gray-300 text-lg font-medium rounded-lg hover:bg-gray-800'>Go back to tools</button>
+                <button className='py-4 px-12 bg-gray-900 focus:ring-4  text-gray-300 text-lg font-medium rounded-lg hover:bg-gray-800'>Go back to tools</button>
             </Link>
         </div>
+        <form    
+        encType="multipart/form-data"
+        onSubmit={onSubmit}
+        >
         <div class="flex items-center justify-center w-full border-dashed border-2 border-gray-200 rounded-md  outline outline-gray-300 outline-offset-4">
             <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-auto border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-300 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 duration-200 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                <div class="flex flex-col items-center justify-center py-10">
-                    
+                <div class="flex flex-col items-center justify-center py-10">  
                     <Flex className='py-10'>
                     <FiUpload className='text-6xl text-gray-500'/>
                     </Flex>
                     <div className='pb-10'>
-                        <input class="" type="file" name='Choose'/>
+                        <input id="dropzone-file" onChange={handleImage}  class="" type="file" name='Choose'/>
                     </div>
                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                     <p class="text-xs text-gray-500 dark:text-gray-400">PDF, PPTX, WORD , PNG, JPG </p>
                 </div>
-                
-
-                <input id="dropzone-file" type="file" class="hidden" />
             </label>
         </div>
+        <div className='text-center mt-14'>
+            <button type='submit' className='py-4 px-12 bg-gray-900 focus:ring-4  text-gray-300 text-lg font-medium rounded-lg hover:bg-gray-800'>Upload</button>
+        </div>
+        </form>
         <p className='text-xl capitalize pt-10 text-gray-200  text-justify'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quaerat dicta rem eum aliquid doloribus quae! Quae placeat ipsam exercitationem voluptates sequi accusantium dolores laboriosam. Ipsam, quo numquam eius amet optio et molestiae ducimus rem, rerum aperiam aut iure veniam at animi quae dignissimos. Modi voluptatibus fuga dolores excepturi.</p>
         </Container>
 
